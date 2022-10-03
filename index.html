@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Create a Keyboard Shortcut List</title>
+</head>
+<body>
+    <h1>Create a Keyboard Shortcut List</h1>
+    <form onsubmit="add_shortcut(); return false;">
+        <div class="shortcut-input-group">
+            <label for="shortcut">Key Combination</label>
+            <input onfocus="get_pressed_keys()" type="text" name="shortcut" id="shortcut">
+            <kbd class="shortcut-text"></kbd>
+        </div>
+        <div class="action-name-group">
+            <label for="actionName">Action Name/Title</label>
+            <input type="text" name="actionName" id="actionName">
+        </div>
+        <input type="submit" value="Add Shortcut">
+    </form>
+
+    <table id="shortcut-table">
+        <thead>
+            <tr>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="./list_keys.js"></script>
+</body>
+</html>

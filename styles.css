@@ -1,0 +1,49 @@
+input, .shortcut-text {
+    font-size: xx-large;
+    display: block;
+}
+
+input[type="submit"] {
+    float: right;
+}
+
+form {
+    max-width: 800px;
+    display: block;
+}
+
+.shortcut-input-group {
+    float: left;
+}
+
+.action-name-group {
+    float: right;
+}
+
+kbd kbd {
+    /* Uses MDN Web Docs' stylings for keyboard shortcuts */
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2),
+                0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    color: #333;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+table {
+    margin: 5rem;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+table, th, td {
+    font-size: xx-large;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
