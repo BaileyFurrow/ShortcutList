@@ -5,7 +5,7 @@ let objKeyList = {
     listName: 'Test',
     keyList: [
         [
-            ['Control', 'Shift', 'v'],
+            ['Control', 'Shift', 'V'],
             'Paste as plain text',
         ],
     ],
