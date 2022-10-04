@@ -4,6 +4,10 @@ class ShortcutItem {
         this.name = name;
     }
 
+    /**
+     * Takes `this.keys` and adds HTML formatting using \<kbd\>
+     * @return {String}    Formatted key combination with \<kbd\> tags
+     */
     formatKeys() {
         let formattedKeys;
 
@@ -16,3 +20,5 @@ class ShortcutItem {
         return formattedKeys;
     }
 }
+
+export default ShortcutItem;

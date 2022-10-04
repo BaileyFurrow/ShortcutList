@@ -1,5 +1,6 @@
 {
     "listName": "Test",
+    "author": "Bob Bobertson",
     "keyList": [
         [
             ["Control", "Shift", "v"],

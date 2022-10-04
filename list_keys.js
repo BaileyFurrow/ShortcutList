@@ -1,6 +1,16 @@
+/**
+ * @type {string[]}
+ */
 let tmpKeys = [];
+
+/**
+ * @type {string[]}
+ */
 let keys = [];
 
+/**
+ * @type {Object}
+ */
 let objKeyList = {
     listName: 'Test',
     keyList: [
@@ -11,8 +21,11 @@ let objKeyList = {
     ],
 };
 
-// Desired order to list keys. Order is reversed (last to first) to unshift
-// values in array.
+/**
+ * Defines the order to sort keys in. Array will be used in reversed format to
+ * `unshift()` keys.
+ * @const {string[]}
+ */
 const KEY_SORT_ORDER = [
     'Control',
     'Shift',
@@ -20,13 +33,21 @@ const KEY_SORT_ORDER = [
     'Alt',
 ].reverse();
 
-
+/**
+ * Captures all non-repeating key presses while the `keyup` event has not been triggered.
+ * @param {Event} e `Event` object provided by `addEventListener()`
+ */
 function keyListener(e) {
     e.preventDefault();
     if (!e.repeat)
         tmpKeys.push(e.key);
 }
 
+/**
+ * Disables key listeners, stores key presses to `keys`, focuses the
+ * `#actionName` field, and shows the formatted key combination
+ * @param {Event} e `Event` object provided by `addEventListener()`
+ */
 function endKeyListener(e) {
     // Disable event listeners for keydown/keyup
     document.removeEventListener('keydown', keyListener);
@@ -60,6 +81,7 @@ function endKeyListener(e) {
     shortcutText.innerHTML = format_kbd(keys);
 }
 
+/** Adds event listeners when the `#shortcut` field is in focus */
 function get_pressed_keys() {
     document.addEventListener('keydown', keyListener);
     document.addEventListener('keyup', endKeyListener);
@@ -67,11 +89,12 @@ function get_pressed_keys() {
         .addEventListener('blur', endKeyListener);
 }
 
+/** To be @depricated */
 function format_kbd(arrShortcut) {
     return '<kbd>' + arrShortcut.join('</kbd> + <kbd>') + '</kbd>';
 }
 
-
+/** Takes the current `objKeyList` and loads it in as a table. */
 function display_as_table() {
     let table = document.querySelector('#shortcut-table');
     let table_header = table.querySelector('thead tr th');
@@ -97,7 +120,7 @@ function display_as_table() {
     });
 }
 
-
+/** Adds the new shortcut to `objKeyList` and runs {@link display_as_table} */
 function add_shortcut() {
     let shortcut_name = document.querySelector('#actionName').value;
     let keyPair = [keys, shortcut_name];
