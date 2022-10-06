@@ -1,3 +1,6 @@
+import ShortcutItem from "./ShortcutItem.js";
+
+
 /**
  * @type {string[]}
  */

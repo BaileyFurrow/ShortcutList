@@ -1,4 +1,15 @@
 class ShortcutItem {
+
+    static LIST_TITLE;
+    static AUTHOR;
+
+    static KEY_SORT_ORDER = [
+        'Control',
+        'Shift',
+        'Meta',
+        'Alt',
+    ].reverse();
+
     constructor(keys, name) {
         this.keys = keys;
         this.name = name;
